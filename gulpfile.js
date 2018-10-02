@@ -1,12 +1,12 @@
 const gulp = require('gulp');
-const scss = require('gulp-sass');
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync');
 
 
 gulp.task('scss', function(){
 	return gulp.src('./src/scss/**/*.scss')
-	.pipe(scss())
+	.pipe(sass())
 	.pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -25,7 +25,7 @@ gulp.task('browser-sync', function(){
 
 gulp.task('watch',['scss','browser-sync'], function(){
 
-	gulp.watch("./src/sass/**/*.scss", ['sass']);
+	gulp.watch("./src/scss/**/*.scss", ['scss']);
 	gulp.watch("./src/js/**/*.js");
 	gulp.watch("./src/index.html", browserSync.reload);
 });
