@@ -1,0 +1,382 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import 'base';
+
+
+  // .debug{
+  // 	@include debug(rgba(0, 0, 0, 0.5), 1px solid #ff0);
+  // }
+.wrapper{
+	@include wrapper();
+
+}
+
+/****************************************
+				HEADER
+*****************************************/
+.header{
+	background: #fff;
+}
+.header__line{
+	@include row-flex();
+
+
+}
+.header__logo{
+	@include col();
+	@include size(4);
+
+	width:300px;
+}
+
+.header__navigation{
+	@include col();
+	@include size(6);
+}
+
+.menu{
+	display:flex;
+	justify-content:center;
+	&__item{
+		margin-left:30px;
+		padding-top:40px;
+		border-top: 3px solid transparent;
+		&:hover{
+			border-top:3px solid $bg_footer;
+		}
+
+	}
+	&__item a{
+		font-family: 'Montserrat';
+		font-size:15px;
+		padding-top:40px;
+
+	}
+}
+
+.social{
+	@include col();
+	@include size(1);
+	ul{
+	display: flex;
+	justify-content:flex-end;
+	}
+	&__icon{
+		margin-top: 40px;
+		margin-left: 10px;
+		text-align:center;
+		//padding:30px;
+	}
+	&__icon a{
+		padding:5px;
+		font-size:19px;
+		color: #111111;
+	}
+}
+
+
+
+
+
+/****************************************
+				SLIDER
+*****************************************/
+.slider{
+	position: relative;
+	.anim{
+		animation-delay: 10s;
+	}
+	&:hover .slick-arrow{
+		display: flex !important;
+		transition: all 2s 9s;
+	}
+	.slick-arrow{
+		justify-content:center;
+		align-items:center;
+		width: 43px;
+		height: 43px;
+		font-size:16px;
+		border-radius: 50%;
+		position: absolute;
+		top:50%;
+		z-index:10;
+		transition: all 2s 9s;
+		cursor: pointer;
+		color: #ffffff;
+    background: rgba(0,0,0,0.5);
+		display: none !important;
+    	&:hover{
+    		color: #141d23;
+    		background: #fff !important;
+    	}
+	}
+	.prev{
+
+		right:3%;
+
+	}
+	.next{
+		left:3%;
+
+	}
+	.slider__item{
+		width: 1583px;
+		height: 570px;
+		.item__content{
+			padding-top: 150px;
+			text-align: center;
+			color: white;
+			.above__header{
+				font-family: Montserrat;
+    		font-size: 18px;
+    		line-height: 1.5;
+    		letter-spacing: 4px;
+				margin-bottom: 15px;
+				animation-delay: 20s;
+			}
+			.slide__header{
+				text-transform: uppercase;
+				font-size:60px;
+				font-weight: 700;
+				font-family: Poppins;
+			}
+			.slide__btn{
+				margin-top:40px;
+			}
+			.above__header{
+				animation-duration: 2s;
+				animation-delay: 1s;
+			}
+			.slide__header{
+				animation-duration: 2s;
+				animation-delay: 3s;
+			}
+			.slide__btn{
+				animation-duration: 2s;
+				animation-delay: 4s;
+			}
+		}
+	}
+}
+
+/****************************************
+				PRODUCT SLIDER
+*****************************************/
+
+.prod__slider{
+
+	position: relative;
+	h3{
+		padding-bottom: 60px;
+		font-weight: 700;
+    font-size: 30px;
+    color: #222222;
+    line-height: 1.2;
+    text-transform: uppercase;
+	}
+	background: #fff;
+	.slick-prev:before{
+		color:#ccc;
+
+	}
+	.slick-next:before{
+		color:#ccc;
+	}
+	.nextArrow{
+
+		// position:absolute;
+		// top:50%;
+		// left: 10%;
+		// font-size: 23px;
+	}
+	.prevArrow{
+
+		// position:absolute;
+		// top:50%;
+		// right: 10%;
+		// font-size: 23px;
+	}
+
+}
+.product__item{
+	padding: 10px;
+	.block-txt{
+		padding: 15px;
+		font-size: 15px;
+		line-height: 1.5;
+		color: #555555;
+	}
+	.block-txt a{
+		display: block;
+	}
+}
+/****************************************
+				OFFERTS
+*****************************************/
+
+.offer{
+  padding-top:50px;
+  padding-bottom:50px;
+	background: #fff;
+
+	&__content{
+		@include row-flex();
+	}
+	&__coll{
+
+		@include col();
+		@include size(4);
+		@include size-md(12);
+	}
+	&__item{
+		position: relative;
+		margin-top:20px;
+		overflow: hidden;
+		box-sizing: border-box;
+		img{
+			transition: all 0.5s;
+
+		}
+		img:hover{
+			transform: scale(1.1);
+		}
+	}
+	.btn-offer{
+		margin:10px;
+		padding:15px 35px;
+		width: 170px;
+		font-size:16px;
+		text-transform: uppercase;
+		font-family:Montserrat, sans-serif;
+		background:#fff;
+		color:#000;
+		outline:none;
+		border:none;
+		cursor:pointer;
+		&:hover{
+			background: $accent;
+			color: #fff;
+		}
+	}
+	.btn-position{
+		bottom:20px;
+		left:0;
+		right:0;
+		margin: auto;
+		position: absolute;
+	}
+}
+/****************************************
+				Follow
+*****************************************/
+.follow{
+	padding-top:60px;
+	.inst-row{
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	.block__inst{
+		width: calc(100% / 5);
+	}
+}
+/****************************************
+				Feedback
+*****************************************/
+.feedback{
+	background:#f3f3f3;
+	margin-top:50px;
+	padding:50px 0 50px;
+	h3{
+		color:$footer-txt;
+	}
+}
+.feed_block{
+		@include row-flex();
+}
+.feed{
+	@include col();
+	@include size(12);
+}
+.mail{
+	text-align:center;
+
+	.btn{
+		margin:10px 0;
+	}
+}
+
+/****************************************
+				DESCRIPTION
+*****************************************/
+.description{
+	background: #fff;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.desc__block{
+	@include row-flex();
+	.line{
+		border-left: dotted 1px #555;
+		border-right: dotted 1px #555;
+	}
+}
+.desc__item h4{
+	text-align: center;
+	font-weight: normal;
+		text-transform: capitalize;
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.5;
+}
+.desc__item{
+	@include col();
+	@include size(4);
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+}
+/****************************************
+				FOOTER
+*****************************************/
+.footer{
+	padding:50px 0 50px;
+	background:$bg_footer;
+	color:$footer-txt;
+	font-family: Montserrat;
+	font-size: 15px;
+	line-height: 1.8;
+	span{
+		font-weight:700;
+	}
+	.social__foo{
+		font-size: 20px;
+		letter-spacing: 5px;
+	}
+
+}
+.row{
+	@include row-flex();
+}
+
+.footer__category{
+	@include col();
+	@include size(4);
+}
+.footer__contact{
+	@include col();
+	@include size(4);
+}
+.oppening__hours{
+	@include col();
+	@include size(4);
+}
+.copirait{
+	@include row-flex();
+	@include col();
+	@include size(12);
+	justify-content:center;
+	margin-top:30px;
+	padding-top:50px;
+	border-top:1px dotted #f3f3f3;
+}
